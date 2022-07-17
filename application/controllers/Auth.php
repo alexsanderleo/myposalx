@@ -5,6 +5,7 @@ class Auth extends CI_Controller {
 
 	public function login()
 	{
+		check_already_login();
 		$this->load->view('viewne_login');
 	}
 //=======================================KODINGAN PROSESS UNTUK MULTI LOGIN==============================//
@@ -30,10 +31,23 @@ class Auth extends CI_Controller {
 				
 				echo "<script>
 					alert('Maaf, login iso');
-					window.location='".site_url('Auth/login ga iso')."';
+					window.location='".site_url('Auth/login')."';
 				</script>";
 			}
 		}
+	}
+
+
+	public function logout()//=======================================FUNGSI UNTUK LOGOUT AUTH LOGIN==============================//
+	{
+		$params = array('user_id', 'level');
+		$this->session->unset_userdata($params);
+		
+		echo "<script>
+					alert('Logout iso!');
+					window.location='".site_url('Auth/login')."';
+				</script>";
+
 	}
 }
 //=======================================END===KODINGAN PROSESS UNTUK MULTI LOGIN==============================//

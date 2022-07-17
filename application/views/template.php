@@ -169,10 +169,12 @@
           <img src="<?=base_url()?>assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Leo</a>
+          <a href= "#" class="d-block">Jeneng id = <?= $this->fungsipropile->user_login()->username?></a>
+          <a href= "#" class="d-block">Anda login sebagai = <?= $this->fungsipropile->user_login()->level?></a>
+          
         </div>
       </div>
-
+ 
       <!-- SidebarSearch Form -->
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
@@ -184,7 +186,7 @@
           </div>
         </div>
       </div>
-
+<!--=================================== ENDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD=-========================================== NAV E COY-->
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -247,7 +249,8 @@
                   <p>Dashboard v3</p>
                 </a>
               </li>
-</ul><!-- ENDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD NAV E COY-->
+</ul>
+<?php if($this->session->userdata('level') == 1) { ?>
               <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -277,8 +280,76 @@
                 </a>
               </li>
 
+<?php } ?>
+
+<!-------------------------------------------------------START mileh endi seng arep di hidden kasih level ----------------------------------- -->
+<?php if($this->session->userdata('level') == 4) { ?>
+              <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Pas
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=base_url()?>assets/index.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v1</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url()?>assets/index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v2</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url()?>assets/index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v3</p>
+                </a>
+              </li>
+
+<?php } ?>
+
+<!-------------------------------------------------------END mileh endi seng arep di hidden kasih level ----------------------------------- -->
+
             </ul>
         
+            <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+               <li class="nav-item">
+            <a href="<?=site_url('auth/logout')?>" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Logout
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+
+          </ul>
+        
+        <nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      <!-- Add icons to the links using the .nav-icon class
+           with font-awesome or any other icon font library -->
+           <li class="nav-item">
+        <a href="<?=site_url('userdatane')?>" class="nav-link">
+          <i class="nav-icon fas fa-th"></i>
+          <p>
+            Data user
+            <span class="right badge badge-danger">New</span>
+          </p>
+        </a>
+      </li>
+
+            <!-- ENDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD NAV E COY-->
           </li>       
         </ul>
       </nav>
