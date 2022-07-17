@@ -283,7 +283,7 @@
 <?php } ?>
 
 <!-------------------------------------------------------START mileh endi seng arep di hidden kasih level ----------------------------------- -->
-<?php if($this->session->userdata('level') == 4) { ?>
+
               <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -312,8 +312,10 @@
                   <p>Dashboard v3</p>
                 </a>
               </li>
+              </ul>
+              
 
-<?php } ?>
+
 
 <!-------------------------------------------------------END mileh endi seng arep di hidden kasih level ----------------------------------- -->
 
@@ -331,14 +333,16 @@
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
+         
           </li>
 
           </ul>
-        
+          <?php if($this->fungsipropile->user_login()->level == 1|| $this->fungsipropile->user_login()->level == 2 ) { ?>
         <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
       <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
+      
            <li class="nav-item">
         <a href="<?=site_url('userdatane')?>" class="nav-link">
           <i class="nav-icon fas fa-th"></i>
@@ -346,13 +350,16 @@
             Data user
             <span class="right badge badge-danger">New</span>
           </p>
+          <?php } ?>
         </a>
       </li>
 
             <!-- ENDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD NAV E COY-->
           </li>       
         </ul>
+        
       </nav>
+     
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
