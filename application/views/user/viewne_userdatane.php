@@ -8,7 +8,7 @@
               </div>
               <!-------------------------MEnambahkan buton-------------------->
               
-              <div class="card-btn">
+              <div class="btn pull-left">
               <a href="<?=site_url('userdatane/add')?>" class="btn btn-primary">
               Tambah
                 </a>     
@@ -18,7 +18,7 @@
               
               <div class="card table-responsive">
                 <!--=================================== NAMPILNE HASIL RESULT DATABASE <?php print_r($row->result()) ?> ----------------------------------------------------->
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="table1">
                   <thead>
                     <tr>
                       <th style="width: 10px">#</th>
@@ -59,12 +59,12 @@
                         </i>
                         Hapus
                         </button>
-                        <td>
+                        
                         </a>    
                         </form>            
 
                         </div>     
-                            
+                    </td>
                                         
                                             <?php
                                             }?>
@@ -75,15 +75,7 @@
                 </table>
               </div>
               <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <ul class="pagination pagination-sm m-0 float-right">
-                  <li class="page-item"><a class="page-link" href="#">«</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">»</a></li>
-                </ul>
-              </div>
+             
             </div>
 
                   </tbody>

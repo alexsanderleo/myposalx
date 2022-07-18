@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=base_url()?>assets/dist/css/adminlte.min.css">
 </head>
@@ -187,114 +191,92 @@
         </div>
       </div>
 <!--=================================== ENDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD=-========================================== NAV E COY-->
-      <!-- Sidebar Menu -->
-      
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" >
-         
-               <li class="nav-item">
-            <a href="Dashboard" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Dashboard
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                        <!-- menambahkan nav baru li diahiri </li -->
+                        <li class="nav-item">
+                            <a href="<?= base_url('dashboard') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'dashboard') echo 'active' ?>">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
 
-          <li class="nav-item">
-            <a href="supplier" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Suppliers
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="customer" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Customer
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
-     
-          <li class="nav-item">
-            <a href="category" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Kategori
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="unit" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Unit
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="customer" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Item
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
+                    <!-- menambahkan nav baru li diahiri </li -->
+                    <li class="nav-item">
+                            <a href="<?= base_url('supplier') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'supplier') echo 'active' ?>">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>Data Supplier</p>
+                            </a>
+                        </li>
 
 
+                        <!-- menambahkan nav baru li diahiri </li -->
+                        <li class="nav-item">
+                            <a href="<?= base_url('customer') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'customer') echo 'active' ?>">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>Customer</p>
+                            </a>
+                        </li>
+
+                         <!-- menambahkan nav baru li diahiri </li -->
+                         <li class="nav-item">
+                            <a href="<?= base_url('userdatane') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'userdatane') echo 'active' ?>">
+                            <i class="nav-icon fas fa-th"></i>
+                              <p>
+                                Data Users
+                                <span class="right badge badge-danger">New</span>
+                              </p>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Produke Demojal
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="display: none;">
+              <li class="nav-item">
+                <a href="Category" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Category</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="unit" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Unit</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="item" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Items</p>
+                </a>
+              </li>
            
-        
-            <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-               <li class="nav-item">
-            <a href="<?=site_url('auth/logout')?>" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Logout
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-         
+            </ul>
           </li>
-
-          </ul>
-          <!-------------------------------------------------------START mileh endi seng arep di hidden kasih level ----------------------------------- -->
-          <?php if($this->fungsipropile->user_login()->level == 1|| $this->fungsipropile->user_login()->level == 2 ) { ?>
-        <nav class="mt-2">
-    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-      <!-- Add icons to the links using the .nav-icon class
-           with font-awesome or any other icon font library -->
-      
-           <li class="nav-item">
-        <a href="<?=site_url('userdatane')?>" class="nav-link">
-          <i class="nav-icon fas fa-th"></i>
-          <p>
-            Data user
-            <span class="right badge badge-danger">New</span>
-          </p>
-          <?php } ?><!-------------------------------------------------------END mileh endi seng arep di hidden kasih level ----------------------------------- -->
-        </a>
-      </li>
-
-            <!-- ENDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD NAV E COY-->
-          </li>       
-        </ul>
-        
-      </nav>
-     
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+              
+                            <li class="nav-item">
+            <a href="auth/logout" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">Logout wae</p>
+            </a>
+          </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -322,10 +304,27 @@
 <script src="<?=base_url()?>assets/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="<?=base_url()?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="<?=base_url()?>assets/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/jszip/jszip.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="<?=base_url()?>assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="<?=base_url()?>assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?=base_url()?>assets/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-
+<script>
+  $(document).ready(function(){
+  $('#table1').DataTable()  
+  })
+</script>
 
 
 </body>
