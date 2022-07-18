@@ -188,10 +188,10 @@
       </div>
 <!--=================================== ENDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD=-========================================== NAV E COY-->
       <!-- Sidebar Menu -->
+      
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+        <ul class="nav nav-pills nav-sidebar flex-column" >
+         
                <li class="nav-item">
             <a href="Dashboard" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
@@ -203,7 +203,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="supplier" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Suppliers
@@ -212,7 +212,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="customer" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Customer
@@ -222,109 +222,39 @@
           </li>
      
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <a href="category" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
               <p>
-                Product
-                <i class="right fas fa-angle-left"></i>
+                Kategori
+                <span class="right badge badge-danger">New</span>
               </p>
             </a>
-
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="<?=base_url()?>assets/index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url()?>assets/index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url()?>assets/index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-</ul>
-<?php if($this->session->userdata('level') == 1) { ?>
-              <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+          </li>
+          <li class="nav-item">
+            <a href="unit" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
               <p>
-                Pas
-                <i class="right fas fa-angle-left"></i>
+                Unit
+                <span class="right badge badge-danger">New</span>
               </p>
             </a>
+          </li>
 
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="<?=base_url()?>assets/index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url()?>assets/index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url()?>assets/index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-
-<?php } ?>
-
-<!-------------------------------------------------------START mileh endi seng arep di hidden kasih level ----------------------------------- -->
-
-              <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+          <li class="nav-item">
+            <a href="customer" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
               <p>
-                Pas
-                <i class="right fas fa-angle-left"></i>
+                Item
+                <span class="right badge badge-danger">New</span>
               </p>
             </a>
-
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="<?=base_url()?>assets/index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url()?>assets/index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url()?>assets/index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-              </ul>
-              
+          </li>
 
 
-
-<!-------------------------------------------------------END mileh endi seng arep di hidden kasih level ----------------------------------- -->
-
-            </ul>
+           
         
             <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
                <li class="nav-item">
             <a href="<?=site_url('auth/logout')?>" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
@@ -337,6 +267,7 @@
           </li>
 
           </ul>
+          <!-------------------------------------------------------START mileh endi seng arep di hidden kasih level ----------------------------------- -->
           <?php if($this->fungsipropile->user_login()->level == 1|| $this->fungsipropile->user_login()->level == 2 ) { ?>
         <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -350,7 +281,7 @@
             Data user
             <span class="right badge badge-danger">New</span>
           </p>
-          <?php } ?>
+          <?php } ?><!-------------------------------------------------------END mileh endi seng arep di hidden kasih level ----------------------------------- -->
         </a>
       </li>
 
@@ -394,6 +325,8 @@
 <!-- AdminLTE App -->
 <script src="<?=base_url()?>assets/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?=base_url()?>assets/dist/js/demo.js"></script>
+
+
+
 </body>
 </html>
