@@ -221,16 +221,7 @@
                             </a>
                         </li>
 
-                         <!-- menambahkan nav baru li diahiri </li -->
-                         <li class="nav-item">
-                            <a href="<?= base_url('userdatane') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'userdatane') echo 'active' ?>">
-                            <i class="nav-icon fas fa-th"></i>
-                              <p>
-                                Data Users
-                                <span class="right badge badge-danger">New</span>
-                              </p>
-                            </a>
-                        </li>
+                       
 
 
                         <li class="nav-item">
@@ -264,7 +255,16 @@
            
             </ul>
           </li>
-              
+                <!-- menambahkan nav baru li diahiri </li -->
+                <li class="nav-item">
+                            <a href="<?= base_url('userdatane') ?>" class="nav-link <?php if ($this->uri->segment(1) == 'userdatane') echo 'active' ?>">
+                            <i class="nav-icon fas fa-th"></i>
+                              <p>
+                                Data Users
+                                <span class="right badge badge-danger">New</span>
+                              </p>
+                            </a>
+                        </li>
                             <li class="nav-item">
             <a href="auth/logout" class="nav-link">
               <i class="nav-icon far fa-circle text-danger"></i>
