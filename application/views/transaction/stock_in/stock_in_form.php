@@ -1,5 +1,5 @@
 
- <section class="content">
+ <section class="content-header">
 
  
 
@@ -13,10 +13,10 @@
           <a href="<?=site_url('stock/in')?>" class="btn btn-secondary">Kembali</a>
         </div>
       </div>
-            
+</section>      
       
  <!-------------------------END-------MEnambahkan buton-------------------->
- 
+ <section class="content">
 
 
 
@@ -75,25 +75,31 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <label>Supplier * </label>
-                <select name="supplier" class="form-control">
-                    <option value="">- Pilih -</option>
-                </select>
-              </div>
+      
 
               <div class="form-group">
                 <label>Details * </label>
-                <input type="text" name="detail"  class="form-control" placeholder="kulakan / tambahan / etc" required>
+                <input type="text" name="detail"  class="form-control" placeholder="kulakan / tambahan / etc" >
               </div>
     
-             
+              <div class="form-group">
+                <label>Supplier</label>
+                <select name="supplier" class="form-control">
+                    <option value="">- Pilih -</option>
+                    <?php foreach($supplier as $i => $data) {
+                      echo '<option value="'.$data->supplier_id.'">'.$data->name.'</option>';
+                    } ?>
+                </select>
+              </div>
            
-              
+              <div class="form-group">
+                <label>Qty *</label>
+                <input type="text" name="qty"  class="form-control" required>
+              </div>
              
 
                 
-                  <div class="box">
+                  <div class="form-group">
                     
                 <button type="submit" name="in_add" class="btn btn-success btn-flat">Save</button>
             
@@ -101,20 +107,19 @@
               </div>
 
               </form>  
+ </section>                
               <div class="modal fade" id="modal-item">
     <div class="modal-dialog">
             <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <h4 class="modal-title">Select</h4>
 </div>
-    <div class="modal-body table-responsive accent-pink">
+    <div class="modal-body table-responsive">
         <table class="table table-bordered table-striped" id="table1">
-        </div>
-
-             <thead>
+                  <thead>
                     <tr>
                        <th> Barcode</th>
                        <th> Name</th>
@@ -138,11 +143,10 @@
                                 data-barcode="<?=$data->barcode?>"
                                 data-name="<?=$data->name?>"
                                 data-unit="<?=$data->unite_name?>"
-                                data-stock="<?=$data->stock?>"
-                                >
-                                <a>
-                                <i class='fa fa-check'></i> Pilih
-                                </a>
+                                data-stock="<?=$data->stock?>">
+                               
+                                <i class="fa fa-check"></i> Select
+                                
                             </button>
                         </td>
                 </tr>
@@ -155,16 +159,15 @@
 </div>
    
 
-    </div>
+
 
     
-    </section>
+
 <!-- DataTables  & Plugins -->
 
 <!-- jQuery -->
 <script src="<?=base_url()?>assets/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="<?=base_url()?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
     <script>
  $(document).ready(function(){
     $(document).on('click', '#select', function() {
@@ -179,7 +182,8 @@
         $('#iteme_name').val(name);
         $('#unit_name').val(unite_name);
         $('#stock').val(stock);
-        $('#modal-item').modal(hide);
+        $('#modal-item').modal('hide');
+        $('#modal-backdrop').modal('hide');
     })
 })
     </script>

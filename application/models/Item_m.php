@@ -68,7 +68,13 @@ public function edit($post){
 		return $query;
 	}
 
-
+ function update_stock_in($data)
+ {
+	$qty = $data['qty'];
+	$id = $data['item_id'];
+	$sql= "UPDATE tabel_produkitem SET stock = stock + '$qty' WHERE item_id = '$id'";
+	$this->db->query($sql);
+ }
 
 	
 }
