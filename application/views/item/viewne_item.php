@@ -29,7 +29,7 @@
                     <th>Unit</th>
                     <th>harga</th>
                     <th>Stock</th>
-                    
+                    <th>Gambar</th>
                     
                     <th>Aksi</th>
                     
@@ -47,6 +47,12 @@
                     <td><?=$tampilno->unite_name?></td>
                     <td><?=$tampilno->price?></td>
                     <td><?=$tampilno->stock?></td>
+                    <td>
+                      <?php if($tampilno->image != null) { ?>
+                        <img src="<?=base_url('uploads/product/'.$tampilno->image)?>" style="width:100px">
+                      <?php } ?>
+                      
+                    </td>
                        <td>
 
                       <!--------------------------------------------MEMBUAT----------------------------------------BTN--EDIT--HAPUYS START--------------------------->

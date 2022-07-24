@@ -42,5 +42,10 @@ function check_admin(){ //gawek fungsi selain iki nganggo if ngisor
 	}
    
 }
+
+function indo_currency($nominal){
+    $result = "Rp" . number_format($nominal, 2, ',', '.');
+    return $result;
+}
     
 

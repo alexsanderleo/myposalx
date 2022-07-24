@@ -32,7 +32,7 @@
             </div>
 
 
-            <form action="<?=site_url('item/process')?>" method="post">  
+            <?php echo form_open_multipart('item/process')?>
             <?php $this->view('messages')?>  
             <div class="card-body">
 
@@ -73,7 +73,19 @@
               </div>
               
              
-
+              <div class="form-group">
+                <label>Gambar </label>
+                <?php if($page == 'edit') {
+                  if($row->image != null) { ?>
+                  <div>
+                    <img src="<?=base_url('uploads/product/'.$row->image)?>" style="width:60%">
+                  </div>
+                    <?php
+                  }
+                }?>
+                <input type="file" name="image"  class="form-control" > <!--type= adalah model form e , sedangkan name=nama yg akan dihubungkan ke database -->
+               
+              </div>
                 
                   <div class="box">
                     
@@ -82,5 +94,5 @@
                 <button type="reset" class="btn btn-flat">reset</button>
               </div>
 
-              </form>  
+              <?php  echo form_close()?>
     </section>

@@ -50,6 +50,13 @@ class item extends CI_Controller {
 	}
 
     public function process(){
+        $config['upload_path'] = './uploads/product/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config['max_size'] = 2048;
+        $config['file_name'] = 'item-'.date('ymd').'-'.substr(md5(rand()),0,10);
+
+
+        $this->load->library('upload', $config);
         $post = $this->input->post(null, TRUE);
         if(isset($_POST['tambah'])){
             if($this->item_m->check_barcode($post['barcodete'])->num_rows() > 0) {
@@ -57,17 +64,40 @@ class item extends CI_Controller {
             redirect('item/tambah');
             
         } else {
-            $this->item_m->tambah($post);
+       
+                if(@$_FILES['image']['name'] != null) {
+                    if($this->upload->do_upload('image')){
+                    $post['image'] = $this->upload->data('file_name');
+                    $this->item_m->tambah($post);
+                    if($this->db->affected_rows() > 0  ) {
+                        $this->session->set_flashdata('success', 'Data berhasil disimpan');
+                                           
+                        }
+                       redirect('item');
+                    }else{
+                        $error = $this->upload->display_errors();
+                        echo"<script>alert('erorr,$error');</script>";
+                       redirect('item/tambah');
+
+                    }
+
+                    
+            }else{
+                $post['gambare'] = null;
+                    $this->item_m->tambah($post);
+                    if($this->db->affected_rows() > 0  ) {
+                        $this->session->set_flashdata('success', 'Data berhasil disimpan');
+                                           
+                        }
+                       redirect('item');
+            }
+            
         }
 
-        } else if(isset($_POST['edit'])){
+    } else if(isset($_POST['edit'])){
             $this->item_m->edit($post);
         }
-        if($this->db->affected_rows() > 0  ) {
-           $this->session->set_flashdata('success', 'Data berhasil disimpan');
-                              
-           }
-          redirect('item');
+        
     }
 
     public function edit($id) 
@@ -86,6 +116,7 @@ class item extends CI_Controller {
         );
 		$this->template->load('template', 'item/viewne_itemtambah', $data);
         }else{
+            
             echo"<script>alert('Data tidak ditemukan');";
                     echo "window.location='".site_url('item')."';</script>";
         }

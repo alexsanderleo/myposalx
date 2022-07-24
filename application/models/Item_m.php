@@ -3,7 +3,7 @@
 class item_m extends CI_Model {
 
 
-public function get($id = null)
+public function get($id = null) //get relasi 2 tabel
 	{
 		$this->db->select('tabel_produkitem.*, tabel_produkcategory.name as kategori_name, tabel_produkunit.name as unite_name ');
 		$this->db->from('tabel_produkitem');
@@ -13,8 +13,10 @@ public function get($id = null)
 			$this->db->where('item_id', $id);
 
 		}
+		$this->db->order_by('barcode', 'asc');
 		$query = $this->db->get();
 		return $query;
+		
 
 	}
 	public function hapus($id) //id ini itu dibaca dibawahnya alias user_id sbg primary key
@@ -30,6 +32,7 @@ $params['name'] = $post['jenenge'];
 $params['category_id'] = $post['category'];
 $params['unit_id'] = $post['unit'];
 $params['price'] = $post['rego'];
+$params['image'] = $post['image'];
 $params['created'] = date('Y-m-d H:i:s');
 		
 		$this->db->insert('tabel_produkitem', $params);
@@ -56,7 +59,11 @@ public function edit($post){
 		if ($id != null) {
 			$this->db->where('item_id !=', $code);
 		}
+		if($post['image'] != null)  {
+			$param['image'] = $post['image'];
 
+		}
+		
 		$query = $this->db->get();
 		return $query;
 	}

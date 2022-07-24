@@ -228,9 +228,9 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Produke Demojal
+                Data master kategori
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">6</span>
+                <span class="badge badge-info right">3</span>
               </p>
             </a>
             <ul class="nav nav-treeview" style="display: none;">
@@ -250,6 +250,40 @@
                 <a href="item" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Items</p>
+                </a>
+              </li>
+           
+            </ul>
+          </li>
+
+
+          
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Transaksi
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview" style="display: none;">
+              <li class="nav-item">
+                <a href="stock/in" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Transaction</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="stock/in/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Stock in add</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="item" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Stock out</p>
                 </a>
               </li>
            
@@ -325,6 +359,7 @@
   $('#table1').DataTable()  
   })
 </script>
+
 
 
 </body>
